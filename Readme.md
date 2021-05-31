@@ -1,7 +1,7 @@
 # Личный проект «Кексобукинг»
 
 * Студент: [Izabela Kazimava](https://up.htmlacademy.ru/javascript/23/user/1772653).
-* Наставник: `Неизвестно`.
+* Наставник: `Magomed Kandajev`.
 
 ---
 
