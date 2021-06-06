@@ -1,29 +1,15 @@
-function randomInteger(min, max) {
-	if (Math.sign(min) === -1 || Math.sign(max) === -1) {return 'error'}
-	if (typeof min !== 'number' || typeof max !== 'number') {return 'error'}
-	if (typeof min == 'undefined' || typeof min == 'undefined') {return 'error'}
-	if (min >= max) {return 'error'}
+function getRandomInteger(min, max) {
+	if (min < 0 || max <= min) {return null}
+	if (typeof min !== 'number' || typeof max !== 'number') {return null}
 	
-	let rand = min + Math.random() * (max - min +1);
-
-	return Math.floor(rand);
+	return Math.floor(min + Math.random() * (max - min +1));
 }
-alert( randomInteger(1, 3) );
+alert(getRandomInteger(1, 3));
 
-function randomFloatNumber(min, max, decimailPlace) {
-	if (Math.sign(min) === -1 || Math.sign(max) === -1) {return 'error'}
-	if (typeof min !== 'number' || typeof max !== 'number' || typeof decimailPlace !== 'number') {return 'error'}
-	if (typeof min == 'undefined' || typeof min == 'undefined' || typeof decimailPlace == 'undefined') {return 'error'}
-	if (min >= max) {return 'error'}
-	if (( (min.toString().includes('.')) ? (min.toString().split('.').pop().length) : (0) ) >= decimailPlace) {return 'error'}
-	if (( (max.toString().includes('.')) ? (max.toString().split('.').pop().length) : (0) ) >= decimailPlace) {return 'error'}
-	if (( (decimailPlace.toString().includes('.')) ? (decimailPlace.toString().split('.').pop().length) : (0) ) > 0) {return 'error'}
+function randomFloatNumber(min, max, decimalPlace) {
+	if (min < 0 || max <= min) {return null}
+	if (typeof min !== 'number' || typeof max !== 'number' || typeof decimalPlace !== 'number') {return null}
 
-	let newMin = Math.floor(min*Math.pow(10, decimailPlace));
-	let newMax = Math.floor(max*Math.pow(10, decimailPlace));
-	let rand = randomInteger(newMin, newMax);
-	let num = rand / Math.pow(10, decimailPlace);
-
-	return (num);
+	return (min + Math.random() * (max - min +1)).toFixed(decimalPlace);
 }
-alert( randomFloatNumber(1.1, 1.2, 3.56) );
+alert(randomFloatNumber(2.2, 5.3, 3));
