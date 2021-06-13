@@ -30,12 +30,11 @@ const createTestAd = () => {
   const location = {
     lat: getRandomFloatNumber(35.65000, 35.70000, 5),
     lng: getRandomFloatNumber(139.70000, 139.80000, 5),
-};
-
-  return {
+  };
+  return { 
     author: {
       avatar: cutRandomArrayElement(avatars),
-    },
+    }
     offer: {
       title: getRandomArrayElement(TITLES),
       price: getRandomInteger(2000, 15000),
@@ -46,9 +45,9 @@ const createTestAd = () => {
       checkout: getRandomArrayElement(TIME),
       features: getRandomArraySlice(FEATURES),
       description: getRandomArrayElement(DESCRIPTION),
-      photos: getRandowArraySlice(PHOTOS),
+      photos: getRandomArraySlice(PHOTOS),
     },
-    location: locatioon,
+    location: location,
   };
 };
 
