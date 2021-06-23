@@ -28,7 +28,7 @@ const getAvatar = () => {
   const number = getRandomInteger(1, SERIAL_NUMBER);
   USED_NUMBERS.push(number);
   return (number < 10) ? `img/avatars/user0${number}.png` : `img/avatars/user${number}.png`;
-}
+};
 
 const getRandomArrayElement = (elements) => elements[getRandomInteger(0, elements.length - 1)];
 
@@ -42,12 +42,12 @@ const getFeatures = () => {
   }
 
   return featuresClone;
-}
+};
 
 const getPhotos = () => {
   const photosClone = [...PHOTOS];
   const removeAmount = getRandomInteger(0, photosClone.length - 1);
-	
+
   for (let index = 1; index <= removeAmount; index++) {
     const removeNumber = getRandomInteger(0, photosClone.length - 1);
     photosClone.splice(removeNumber, 1);
@@ -58,9 +58,9 @@ const getPhotos = () => {
 
 const createTestAd = () => {
   const lat = getRandomFloatNumber(MIN_LAT, MAX_LAT, DECIMAL);
-  const lng = getRandomFloatNumber(MIN_LAT, MAX_LAT, DECIMAL);
+  const lng = getRandomFloatNumber(MIN_LGN, MAX_LNG, DECIMAL);
 
-  return { 
+  return {
     author: {
       avatar: getAvatar(),
     },
