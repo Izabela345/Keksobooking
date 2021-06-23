@@ -54,11 +54,11 @@ const getPhotos = () => {
   }
 
   return photosClone;
-}
+};
 
 const createTestAd = () => {
   const lat = getRandomFloatNumber(MIN_LAT, MAX_LAT, DECIMAL);
-  const lng = getRandomFloatNumber(MIN_LGN, MAX_LNG, DECIMAL);
+  const lng = getRandomFloatNumber(MIN_LNG, MAX_LNG, DECIMAL);
 
   return {
     author: {
