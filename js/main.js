@@ -32,29 +32,19 @@ const getAvatar = () => {
 
 const getRandomArrayElement = (elements) => elements[getRandomInteger(0, elements.length - 1)];
 
-const getFeatures = () => {
-  const featuresClone = [...FEATURES];
-  const removeAmount = getRandomInteger(0, featuresClone.length - 1);
+function getElements(elements) {
+  const elementsLength = elements.length;
+  const randomInteger = getRandomInteger (1, elementsLength);
 
-  for (let index = 1; index <= removeAmount; index++) {
-    const removeNumber = getRandomInteger(0, featuresClone.length - 1);
-    featuresClone.splice(removeNumber, 1);
+  for (let i = elements.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    let temp = elements[i];
+    elements[i] = elements[j];
+    elements[j] = temp;
   }
 
-  return featuresClone;
-};
-
-const getPhotos = () => {
-  const photosClone = [...PHOTOS];
-  const removeAmount = getRandomInteger(0, photosClone.length - 1);
-
-  for (let index = 1; index <= removeAmount; index++) {
-    const removeNumber = getRandomInteger(0, photosClone.length - 1);
-    photosClone.splice(removeNumber, 1);
-  }
-
-  return photosClone;
-};
+  return elements.slice(0, randomInteger);
+}
 
 const createTestAd = () => {
   const lat = getRandomFloatNumber(MIN_LAT, MAX_LAT, DECIMAL);
@@ -66,16 +56,16 @@ const createTestAd = () => {
     },
     offer: {
       title: getRandomArrayElement(TITLES),
-      adress: {lat, lng},
+      address: {lat, lng},
       price: getRandomInteger(2000, 15000),
       type: getRandomArrayElement(TYPES),
       rooms: getRandomInteger(1, 10),
       guests: getRandomInteger(1, 10),
       checkin: getRandomArrayElement(TIMES),
       checkout: getRandomArrayElement(TIMES),
-      features: getFeatures(),
+      features: getElements(FEATURES),
       description: getRandomArrayElement(DESCRIPTION),
-      photos: getPhotos(),
+      photos: getElements(PHOTOS),
     },
     location: {
       lat: lat,
