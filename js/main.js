@@ -57,8 +57,8 @@ const getPhotos = () => {
 }
 
 const createTestAd = () => {
-  const lat = getRandomFloatNumber(MIN_LAT, MAX_LAT, DECIMAL),
-  const lng = getRandomFloatNumber(MIN_LAT, MAX_LAT, DECIMAL),
+  const lat = getRandomFloatNumber(MIN_LAT, MAX_LAT, DECIMAL);
+  const lng = getRandomFloatNumber(MIN_LAT, MAX_LAT, DECIMAL);
 
   return { 
     author: {
