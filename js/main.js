@@ -36,11 +36,11 @@ function getElements(elements) {
   const elementsLength = elements.length;
   const randomInteger = getRandomInteger (1, elementsLength);
 
-  for (let i = elements.length - 1; i > 0; i--) {
-    let j = Math.floor(Math.random() * (i + 1));
-    let temp = elements[i];
-    elements[i] = elements[j];
-    elements[j] = temp;
+  for (let currentIndex = elements.length - 1; currentIndex > 0; currentIndex--) {
+    let randomIndex = Math.floor(Math.random() * (currentIndex + 1));
+    let temp = elements[currentIndex];
+    elements[currentIndex] = elements[randomIndex];
+    elements[randomIndex] = temp;
   }
 
   return elements.slice(0, randomInteger);
