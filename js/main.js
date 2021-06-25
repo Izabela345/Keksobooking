@@ -32,18 +32,18 @@ const getAvatar = () => {
 
 const getRandomArrayElement = (elements) => elements[getRandomInteger(0, elements.length - 1)];
 
-function getElements(elements) {
-  const elementsLength = elements.length;
-  const randomInteger = getRandomInteger (1, elementsLength);
-
+function shuffle(elements) {
   for (let currentIndex = elements.length - 1; currentIndex > 0; currentIndex--) {
-    let randomIndex = Math.floor(Math.random() * (currentIndex + 1));
-    let temp = elements[currentIndex];
+    const randomIndex = Math.floor(Math.random() * (currentIndex + 1));
+    const temp = elements[currentIndex];
     elements[currentIndex] = elements[randomIndex];
     elements[randomIndex] = temp;
   }
+  return elements;
+}
 
-  return elements.slice(0, randomInteger);
+function getRandomSliceElements(elements) {
+  return shuffle(elements).slice(0, getRandomInteger(1, elements.length));
 }
 
 const createTestAd = () => {
@@ -63,9 +63,9 @@ const createTestAd = () => {
       guests: getRandomInteger(1, 10),
       checkin: getRandomArrayElement(TIMES),
       checkout: getRandomArrayElement(TIMES),
-      features: getElements(FEATURES),
+      features: getRandomSliceElements(FEATURES),
       description: getRandomArrayElement(DESCRIPTION),
-      photos: getElements(PHOTOS),
+      photos: getRandomSliceElements(PHOTOS),
     },
     location: {
       lat: lat,
