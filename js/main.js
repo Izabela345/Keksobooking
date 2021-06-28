@@ -1,3 +1,3 @@
-import {createAdsArray} from './dialog.js';
+import {createAdsArray} from './data.js';
 
 createAdsArray(10);
