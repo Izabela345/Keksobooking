@@ -17,11 +17,11 @@ const getAvatar = () => {
   const number = getRandomInteger(1, SERIAL_NUMBER);
   USED_NUMBERS.push(number);
   return (number < 10) ? `img/avatars/user0${number}.png` : `img/avatars/user${number}.png`;
-}
+};
 
 const createTestAd = (index) => {
   const lat = getRandomFloatNumber(MIN_LAT, MAX_LAT, DECIMAL);
-  const lng = getRandomFloatNumber(MIN_LAT, MAX_LAT, DECIMAL);
+  const lng = getRandomFloatNumber(MIN_LNG, MAX_LNG, DECIMAL);
 
   return {
     author: {
