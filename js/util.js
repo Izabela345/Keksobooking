@@ -26,4 +26,4 @@ function getRandomSliceElements(elements) {
   return shuffle(elements).slice(0, getRandomInteger(1, elements.length));
 }
 
-export {getRandomInteger, getRandomFloatNumber, getRandomArrayElement, shuffle, getRandomSliceElements};
+export {getRandomInteger, getRandomFloatNumber, getRandomArrayElement, getRandomSliceElements};

@@ -1,4 +1,4 @@
-import {getRandomInteger, getRandomFloatNumber, getRandomArrayElement, shuffle, getRandomSliceElements} from './util.js';
+import {getRandomInteger, getRandomFloatNumber, getRandomArrayElement, getRandomSliceElements} from './util.js';
 const TITLES = ['Armani Hotel Dubai', 'Burj Al Arab Jumeirach', 'Raffles Dubai', 'Address Beach Resort','Atlantis The Palm', 'The Westin Dubai Mina Seyahi Beach Resort & Marina', 'Jumeirach Zabeel Saray', 'Adress Downtown', 'Sofitel Dubai The Palm Resort & Spa', 'One&Only The Palm Dubai'];
 const TYPES = ['palace', 'flat', 'house', 'bungalow', 'hotel'];
 const TIMES = ['12:00', '13:00', '14:00'];
@@ -19,7 +19,7 @@ const getAvatar = () => {
   return (number < 10) ? `img/avatars/user0${number}.png` : `img/avatars/user${number}.png`;
 };
 
-const createTestAd = (index) => {
+const createTestAd = () => {
   const lat = getRandomFloatNumber(MIN_LAT, MAX_LAT, DECIMAL);
   const lng = getRandomFloatNumber(MIN_LNG, MAX_LNG, DECIMAL);
 
@@ -50,7 +50,7 @@ const createTestAd = (index) => {
 const createAdsArray = (adsNumber) => {
   const adsArray = [];
   for (let index = 1; index <= adsNumber; index++) {
-    adsArray.push(createTestAd(index));
+    adsArray.push(createTestAd());
   }
   return adsArray;
 };
