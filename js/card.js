@@ -1,4 +1,5 @@
-st 
+const similarListAds = document.querySelector('#map-canvas');
+const similarListAds = document.querySelector('#map-canvas');
 const similarAdsTemplate = document.querySelector('#card').content.querySelector('.popup');
 const similarAds = createAdsArray();
 const HousingType = {
